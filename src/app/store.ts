@@ -2,13 +2,11 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
-import { counterSliceReducer } from '../page/Report-stocks/stockReducer';
 import { calculateImgReducer } from '../page/Calculate-Img/Redux/calculateImgReducer';
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
-    reportStock: counterSliceReducer,
     calculateImg: calculateImgReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),

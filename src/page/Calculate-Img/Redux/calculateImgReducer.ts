@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 import { RootStateType } from '../../../app/store';
-import { CityStockType } from '../../Report-stocks/stockReducer';
 
 export type CalculateImgT = {
   imgs: {
@@ -45,6 +45,7 @@ export const CalculateImg = createSlice({
       const imgsFilter = state.imgs.filter((item) => item.amount > 0 && item.img);
       const draftArray: File[] = [];
       imgsFilter.forEach((item) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         draftArray.push(item.img.name);
         for (let i = 1; i <= item.amount; i++) {

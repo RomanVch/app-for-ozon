@@ -10,7 +10,8 @@ type MenuItemType = {
 
 export const CustomLink: React.FC<MenuItemType> = ({ to, onClick, children }) => {
   const match = useMatch(to);
-  onClick && onClick();
+  const onClicker = () => onClick && onClick();
+  onClicker();
   return (
     <NavLink to={to} style={match ? { color: 'red' } : { color: 'dark' }}>
       {children}

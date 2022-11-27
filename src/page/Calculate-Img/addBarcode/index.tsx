@@ -43,7 +43,8 @@ export const AddBarcode: React.FC<AddBarcodeT> = ({ place }) => {
             src={URL.createObjectURL(img[place].img as Blob | MediaSource)}
             alt="preview"
           />
-          <p className="name">{img[place].img?.name}</p>
+
+          <p className="name">{}</p>
         </div>
       ) : null}
       <div className="plus">

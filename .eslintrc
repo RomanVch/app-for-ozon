@@ -17,9 +17,10 @@
     "prettier",
     "plugin:prettier/recommended",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended"
   ],
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "jest"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "jest","import"],
   "env": {
     "browser": true,
     "es6": true,
@@ -33,6 +34,7 @@
     "linebreak-style": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/ban-ts-ignore": "off",
     "prettier/prettier": [
       "error",
       {

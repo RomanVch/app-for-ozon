@@ -39,10 +39,12 @@ export const getTranslit = (word: string) => {
 
   let answer = '';
   for (let i = 0; i < word.length; ++i) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     if (converter[word[i]] == undefined) {
       answer += word[i];
     } else {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       answer += converter[word[i]];
     }
@@ -50,6 +52,6 @@ export const getTranslit = (word: string) => {
 
   answer = answer.replace(/[^-0-9a-z]/g, '-');
   answer = answer.replace(/[-]+/g, '-');
-  answer = answer.replace(/^\-|-$/g, '');
+  answer = answer.replace(/^|-$/g, '');
   return answer;
 };

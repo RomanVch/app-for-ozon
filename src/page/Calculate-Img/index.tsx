@@ -21,7 +21,7 @@ export const CalculateImg = () => {
         {
           <CustomLink
             onClick={onClick}
-            to="/calculate-img/view"
+            to="/app-for-ozon/calculate-img/view"
             children={
               <Typography variant="h6" component="h6">
                 Показать

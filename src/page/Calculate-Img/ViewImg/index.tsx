@@ -2,12 +2,10 @@ import './style.css';
 
 import { useSelector } from 'react-redux';
 
-import { useEffect, useState } from 'react';
-import { calculateImgData, viewImgData } from '../Redux/calculateImgReducer';
+import { viewImgData } from '../Redux/calculateImgReducer';
 
 export const ViewImg = () => {
   const Imgs = useSelector(viewImgData);
-
   return (
     <div className="view-imgs">
       {Imgs.map((file, index) => {
