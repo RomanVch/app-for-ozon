@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
+  "name": "app-for-ozon",
   "version": "0.1.0",
+  "homepage": "https://romanvch.github.io/app-for-ozon",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -29,7 +30,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src",
-    "lint-fix": "eslint src --quiet --fix"
+    "lint-fix": "eslint src --quiet --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +65,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^4.0.0",
     "typescript": "^4.7.3"
   }
 }
