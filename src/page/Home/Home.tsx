@@ -8,7 +8,7 @@ export const Home = () => {
       <Typography variant="h4" component="h4">
         Менеджер Озон
       </Typography>
-{/*      <Paper className={'home-paper'} elevation={3}>
+      {/*      <Paper className={'home-paper'} elevation={3}>
         <CustomLink
           to="/report-stocks-city"
           children={

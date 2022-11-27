@@ -13,21 +13,21 @@ export const ViewImg = () => {
       {Imgs.map((file, index) => {
         if (file.name) {
           return (
-              <div key={index} className={'position-image'}>
-                {
-                  <img
-                      className="image"
-                      src={URL.createObjectURL(file as Blob | MediaSource)}
-                      alt="preview"
-                  />
-                }
-              </div>
+            <div key={index} className={'position-image'}>
+              {
+                <img
+                  className="image"
+                  src={URL.createObjectURL(file as Blob | MediaSource)}
+                  alt="preview"
+                />
+              }
+            </div>
           );
         } else {
           return (
-              <div key={index} className={'position-image'}>
-                <div className="image">{file.toString()}</div>
-              </div>
+            <div key={index} className={'position-image'}>
+              <div className="image">{file.toString()}</div>
+            </div>
           );
         }
       })}
