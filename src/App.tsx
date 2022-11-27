@@ -11,13 +11,13 @@ import { ViewImg } from './page/Calculate-Img/ViewImg';
 
 function App() {
   const routes = useRoutes([
-    { path: '/', element: <Home /> },
-    { path: '/report-stocks-city', element: <ReportStocksCity /> },
-    { path: '/report-stocks-city/:city', element: <ReportStockCityCategory /> },
-    { path: '/report-stocks-city/:city/:category', element: <ReportStockCityGoods /> },
-    { path: '/report-stocks-all-goods/', element: <ReportStocksAllGoods /> },
-    { path: '/calculate-img', element: <CalculateImg /> },
-    { path: '/calculate-img/view', element: <ViewImg /> }
+    { path: '/app-for-ozon', element: <Home /> },
+    { path: '/app-for-ozon/report-stocks-city', element: <ReportStocksCity /> },
+    { path: '/app-for-ozon/report-stocks-city/:city', element: <ReportStockCityCategory /> },
+    { path: '/app-for-ozon/report-stocks-city/:city/:category', element: <ReportStockCityGoods /> },
+    { path: '/app-for-ozon/report-stocks-all-goods/', element: <ReportStocksAllGoods /> },
+    { path: '/app-for-ozon/calculate-img', element: <CalculateImg /> },
+    { path: '/app-for-ozon/calculate-img/view', element: <ViewImg /> }
   ]);
 
   return (

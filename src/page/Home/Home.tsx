@@ -10,7 +10,7 @@ export const Home = () => {
       </Typography>
       {/*      <Paper className={'home-paper'} elevation={3}>
         <CustomLink
-          to="/report-stocks-city"
+          to="/app-for-ozon/report-stocks-city"
           children={
             <Typography variant="h6" component="h6">
               отчет по остаткам по городам и селам
@@ -20,7 +20,7 @@ export const Home = () => {
       </Paper>*/}
       <Paper className={'home-paper'} elevation={3}>
         <CustomLink
-          to="/calculate-img"
+          to="/app-for-ozon/calculate-img"
           children={
             <Typography variant="h6" component="h6">
               калькулятор изображений
