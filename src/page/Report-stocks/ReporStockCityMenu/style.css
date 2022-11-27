@@ -1,0 +1,17 @@
+.home {
+    text-align: center;
+    margin:10px ;
+}
+
+.home-paper{
+    width: 150px;
+    height: 150px;
+    position: relative;
+
+}
+
+.home-paper h6{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%)
+}

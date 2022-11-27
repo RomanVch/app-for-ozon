@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  margin:10px ;
+}
+
+.paper-root{
+  width: 150px;
+  height: 150px;
+  position: relative;
+
+}
+
+.paper-root h6{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%)
+}

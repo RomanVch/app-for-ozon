@@ -1,0 +1,12 @@
+.main_div {
+    display: flex;
+}
+.center_div {
+    width: 200px;
+    display: flex;
+    margin-left: 15px;
+}
+.center_div h4{
+    text-align: center;
+    margin: auto;
+}
