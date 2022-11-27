@@ -3,3 +3,26 @@
     text-align: center;
     margin: auto;
 }
+
+.calculate .info-print-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calculate .info-print-wrapper div {
+    margin-right: 15px;
+}
+
+.calculate .progress-card {
+    display: flex;
+    align-items: center;
+}
+.calculate .progress-card p {
+    margin-right: 15px;
+}
+
+.calculate .info-print-wrapper .info {
+margin-top: 12px;
+}

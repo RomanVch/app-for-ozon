@@ -32,6 +32,7 @@ export const AddBarcode: React.FC<AddBarcodeT> = ({ place }) => {
     dispatch(setCount({ id: place, count }));
   };
 
+  const nameImg = img[place].img?.name ? img[place].img?.name : null;
   return (
     <div className="AddBarcode">
       <UploadFile onUpload={onUpload} />
@@ -44,7 +45,7 @@ export const AddBarcode: React.FC<AddBarcodeT> = ({ place }) => {
             alt="preview"
           />
 
-          <p className="name">{}</p>
+          <p className="name">{nameImg}</p>
         </div>
       ) : null}
       <div className="plus">

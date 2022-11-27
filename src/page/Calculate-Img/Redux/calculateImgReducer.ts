@@ -4,7 +4,7 @@ import { RootStateType } from '../../../app/store';
 
 export type CalculateImgT = {
   imgs: {
-    img: null | File | string;
+    img: null | File;
     amount: number;
   }[];
   arrayImg: File[];

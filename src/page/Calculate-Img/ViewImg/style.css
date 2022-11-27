@@ -7,11 +7,10 @@
 }
 
 .view-imgs .position-image {
-   display: flex;
-    margin-bottom: 4px;
-    margin-right: 2px;
-    outline: black 1px;
+    display: flex;
+    padding: 2px 1px;
     break-inside: avoid;
+    outline: 1px gray dashed;
 }
 .view-imgs .position-image .image {
     width: 186px;
