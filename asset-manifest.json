@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/app-for-ozon/static/css/main.fffab8f4.css",
+    "main.js": "/app-for-ozon/static/js/main.3230de46.js",
+    "index.html": "/app-for-ozon/index.html",
+    "main.fffab8f4.css.map": "/app-for-ozon/static/css/main.fffab8f4.css.map",
+    "main.3230de46.js.map": "/app-for-ozon/static/js/main.3230de46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fffab8f4.css",
+    "static/js/main.3230de46.js"
+  ]
+}
