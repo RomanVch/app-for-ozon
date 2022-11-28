@@ -50,11 +50,33 @@ export const ViewImg = () => {
             );
           }
         } else {
-          return (
-            <div key={index} className={'position-image'}>
-              <div className="image">{file.toString()}</div>
-            </div>
-          );
+          if (!(index % 40) && index !== 0) {
+            return (
+              <>
+                <div key={index} className={'position-image'}>
+                  <div className="image" />
+                </div>
+                <div key={index} className={'position-image'}>
+                  <div className="image" />
+                </div>
+                <div key={index} className={'position-image'}>
+                  <div className="image" />
+                </div>
+                <div key={index} className={'position-image'}>
+                  <div className="image" />
+                </div>
+                <div key={index} className={'position-image'}>
+                  <div className="image">{file.toString()}</div>
+                </div>
+              </>
+            );
+          } else {
+            return (
+              <div key={index} className={'position-image'}>
+                <div className="image">{file.toString()}</div>
+              </div>
+            );
+          }
         }
       })}
     </div>

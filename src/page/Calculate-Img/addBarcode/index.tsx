@@ -36,7 +36,7 @@ export const AddBarcode: React.FC<AddBarcodeT> = ({ place }) => {
   return (
     <div className="AddBarcode">
       <UploadFile onUpload={onUpload} />
-      <Counter setCount={onSetCount} place={place} />
+      <Counter setCount={onSetCount} />
       {img[place].img ? (
         <div className={'preview'}>
           <img

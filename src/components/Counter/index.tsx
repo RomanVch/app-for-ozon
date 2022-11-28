@@ -1,28 +1,13 @@
 import './style.css';
-import { Button, Paper, TextField, Tooltip, Typography } from '@mui/material';
-import { ChangeEvent, FormEventHandler, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { calculateImgData } from '../../page/Calculate-Img/Redux/calculateImgReducer';
+import { TextField } from '@mui/material';
+import { ChangeEvent } from 'react';
 
 type CounterT = {
-  place: number;
   setCount: (count: number) => void;
 };
 
-export const Counter: React.FC<CounterT> = ({ place, setCount }) => {
-  const counter = useSelector(calculateImgData);
-  const count = counter[place].amount;
-  const IncNum = () => {
-    setCount(count + 1);
-  };
-  const DecNum = () => {
-    if (count > 0) setCount(count - 1);
-    else {
-      setCount(0);
-    }
-  };
+export const Counter: React.FC<CounterT> = ({ setCount }) => {
   const onInput = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    console.log();
     setCount(+event.target.value);
   };
   return (
@@ -33,6 +18,7 @@ export const Counter: React.FC<CounterT> = ({ place, setCount }) => {
             id="outlined-number"
             label="кол-во"
             type="number"
+            placeholder="0"
             InputLabelProps={{
               shrink: true
             }}
