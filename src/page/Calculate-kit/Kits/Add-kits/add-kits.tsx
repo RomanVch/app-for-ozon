@@ -1,9 +1,8 @@
 import './style.css';
-import { Paper, TextField, Typography } from '@mui/material';
-import Button from '@mui/material/Button';
-import { Counter } from '../../../../components/Counter';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { TextField } from '@mui/material';
+import Button from '@mui/material/Button';
 
 import {
   toggleCheckAddKit,
@@ -11,15 +10,13 @@ import {
   AddKitData,
   delGoodInKit,
   getNameKit,
-  getAmountKit,
   getAddKit
-} from './../../Redux/calculateKitReducer';
+} from '../../Redux/calculateKitReducer';
 import { GoodCard } from '../../../../components/GoodCard';
 
 export const AddKits = () => {
   const checkAddGoodKit = useSelector(toggleCheckAddGoodKit);
   const addKit = useSelector(AddKitData);
-  const [kit, setKit] = useState({ name: '', amount: 1, goods: [] });
   const dispatch = useDispatch();
 
   const onChange = (name: string) => {

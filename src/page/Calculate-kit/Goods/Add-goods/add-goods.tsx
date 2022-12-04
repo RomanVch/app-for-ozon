@@ -1,13 +1,14 @@
 import './style.css';
-import { Paper, TextField, Typography } from '@mui/material';
+import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import { Counter } from '../../../../components/Counter';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { addGoods } from '../../Redux/calculateKitReducer';
+import { addGoods, checkDelData, toggleCheckDelGood } from '../../Redux/calculateKitReducer';
 
 export const AddGoods = () => {
+  const checkDel = useSelector(checkDelData);
   const [good, setGoods] = useState({ name: '', amount: 0 });
   const dispatch = useDispatch();
   const onCount = (count: number) => {
@@ -15,6 +16,10 @@ export const AddGoods = () => {
   };
   const onChange = (name: string) => {
     setGoods({ name, amount: good.amount });
+  };
+
+  const onDelKit = () => {
+    dispatch(toggleCheckDelGood());
   };
 
   const onButton = () => {
@@ -32,7 +37,14 @@ export const AddGoods = () => {
         }}
       />
       <Counter setCount={onCount} />
-      <Button onClick={onButton}>Add</Button>
+      <div className={'del-goods-btn'}>
+        <Button onClick={onDelKit} color="error" variant={checkDel ? 'contained' : 'outlined'}>
+          Del
+        </Button>
+      </div>
+      <div className={'add-goods-btn'}>
+        <Button onClick={onButton}>Add</Button>{' '}
+      </div>
     </div>
   );
 };

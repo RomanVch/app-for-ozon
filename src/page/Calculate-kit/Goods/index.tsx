@@ -12,7 +12,7 @@ import { addGoodInKit } from '../Redux/calculateKitReducer';
 
 export const Goods: React.FC = () => {
   const goods = useSelector(calculateKitGoodsData);
-  const checkAddKit = useSelector(calculateKitBehaviorData).checkAddKit;
+  const { checkAddKit, checkDel } = useSelector(calculateKitBehaviorData);
   const dispatch = useDispatch();
   const amountGoods = goods.reduce(function (accumulator, currentValue, index, array) {
     return accumulator + currentValue.amount;
@@ -20,7 +20,8 @@ export const Goods: React.FC = () => {
   const onClick = (id: string) => {
     if (checkAddKit) {
       dispatch(addGoodInKit(id));
-    } else {
+    }
+    if (checkDel) {
       dispatch(delGood(id));
     }
   };

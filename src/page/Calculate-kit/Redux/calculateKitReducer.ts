@@ -21,6 +21,7 @@ export type CalculateKitT = {
   addKit: KitT;
   behavior: {
     checkAddKit: boolean;
+    checkDel: boolean;
   };
 };
 
@@ -34,7 +35,8 @@ const initialState: CalculateKitT = {
     amount: 0
   },
   behavior: {
-    checkAddKit: false
+    checkAddKit: false,
+    checkDel: false
   }
 };
 
@@ -50,6 +52,15 @@ export const CalculateKit = createSlice({
     },
     toggleCheckAddKit: (state) => {
       state.behavior.checkAddKit = !state.behavior.checkAddKit;
+      if (state.behavior.checkDel) {
+        state.behavior.checkDel = !state.behavior.checkDel;
+      }
+    },
+    toggleCheckDelGood: (state) => {
+      state.behavior.checkDel = !state.behavior.checkDel;
+      if (state.behavior.checkAddKit) {
+        state.behavior.checkAddKit = !state.behavior.checkAddKit;
+      }
     },
     addGoodInKit: (state, action: PayloadAction<string>) => {
       const good = state.goods.find((index) => index.id === action.payload);
@@ -146,6 +157,7 @@ export const {
   addGoodInKit,
   toggleCheckAddKit,
   delGoodInKit,
+  toggleCheckDelGood,
   delGood,
   getNameKit,
   getAmountKit,
@@ -160,4 +172,5 @@ export const calculateKitBehaviorData = (state: RootStateType) => state.calculat
 export const AddKitData = (state: RootStateType) => state.calculateKit.addKit;
 export const toggleCheckAddGoodKit = (state: RootStateType) =>
   state.calculateKit.behavior.checkAddKit;
+export const checkDelData = (state: RootStateType) => state.calculateKit.behavior.checkDel;
 export const KitsData = (state: RootStateType) => state.calculateKit.kits;

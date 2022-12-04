@@ -2,3 +2,10 @@
     display: flex;
     margin: 20px;
 }
+.add-goods .add-goods-btn {
+    margin: auto;
+}
+.add-goods .del-goods-btn {
+    margin: auto;
+
+}
