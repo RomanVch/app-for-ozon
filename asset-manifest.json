@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/app-for-ozon/static/css/main.b728766b.css",
-    "main.js": "/app-for-ozon/static/js/main.59ca8e50.js",
+    "main.css": "/app-for-ozon/static/css/main.e141c8c5.css",
+    "main.js": "/app-for-ozon/static/js/main.3ebda050.js",
     "index.html": "/app-for-ozon/index.html",
-    "main.b728766b.css.map": "/app-for-ozon/static/css/main.b728766b.css.map",
-    "main.59ca8e50.js.map": "/app-for-ozon/static/js/main.59ca8e50.js.map"
+    "main.e141c8c5.css.map": "/app-for-ozon/static/css/main.e141c8c5.css.map",
+    "main.3ebda050.js.map": "/app-for-ozon/static/js/main.3ebda050.js.map"
   },
   "entrypoints": [
-    "static/css/main.b728766b.css",
-    "static/js/main.59ca8e50.js"
+    "static/css/main.e141c8c5.css",
+    "static/js/main.3ebda050.js"
   ]
 }
