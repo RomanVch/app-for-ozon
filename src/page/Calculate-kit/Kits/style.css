@@ -1,0 +1,9 @@
+.goods .kits-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.goods .view-goods {
+    display: flex;
+    margin: 30px;
+    flex-wrap: wrap ;
+}

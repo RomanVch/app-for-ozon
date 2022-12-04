@@ -1,0 +1,13 @@
+.kit-good{
+    display: flex;
+    flex-wrap: wrap;
+}
+.kit-wrapper{
+    width: 300px;
+    margin-bottom: 10px;
+}
+.kit-card-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

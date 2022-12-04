@@ -1,0 +1,14 @@
+.add-kit {
+    display: flex;
+    margin: 20px;
+}
+.add-kit .add-kit-btn {
+    align-items: flex-end;
+}
+.add-kit .add-good {
+    display: flex;
+    height: 55px
+}
+.add-kit-good {
+    display: flex;
+}

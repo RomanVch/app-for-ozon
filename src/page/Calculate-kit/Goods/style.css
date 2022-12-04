@@ -1,0 +1,11 @@
+.goods {
+}
+.goods .view-goods {
+    display: flex;
+    margin: 30px;
+    flex-wrap: wrap ;
+}
+
+.goods .add-kit-btn {
+ margin-left: auto;
+}

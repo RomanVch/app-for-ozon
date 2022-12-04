@@ -23,7 +23,17 @@ export const Home = () => {
           to="/app-for-ozon/calculate-img"
           children={
             <Typography variant="h6" component="h6">
-              калькулятор изображений
+              калькулятор баркодов
+            </Typography>
+          }
+        />
+      </Paper>
+      <Paper className={'home-paper'} elevation={3}>
+        <CustomLink
+          to="/app-for-ozon/calculate-kit"
+          children={
+            <Typography variant="h6" component="h6">
+              калькулятор комплектов
             </Typography>
           }
         />
