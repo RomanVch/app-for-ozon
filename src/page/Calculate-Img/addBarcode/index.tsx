@@ -18,6 +18,7 @@ type AddBarcodeT = {
 
 export const AddBarcode: React.FC<AddBarcodeT> = ({ place }) => {
   const img = useSelector(calculateImgData);
+  const value = img[place].amount;
   const dispatch = useDispatch();
   const onPlus = () => {
     dispatch(addBarcode());
@@ -36,7 +37,7 @@ export const AddBarcode: React.FC<AddBarcodeT> = ({ place }) => {
   return (
     <div className="AddBarcode">
       <UploadFile onUpload={onUpload} />
-      <Counter setCount={onSetCount} />
+      <Counter setCount={onSetCount} value={value} />
       {img[place].img ? (
         <div className={'preview'}>
           <img

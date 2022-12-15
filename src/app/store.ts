@@ -4,12 +4,14 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
 import { calculateImgReducer } from '../page/Calculate-Img/Redux/calculateImgReducer';
 import { calculateKitReducer } from '../page/Calculate-kit/Redux/calculateKitReducer';
+import { homeReducer } from '../page/Home/Redux/HomeReducer';
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
     calculateImg: calculateImgReducer,
-    calculateKit: calculateKitReducer
+    calculateKit: calculateKitReducer,
+    home: homeReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
   devTools: true

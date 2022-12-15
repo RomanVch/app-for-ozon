@@ -13,7 +13,7 @@ type KitT = {
   id: string;
 };
 
-export const Kit: React.FC<KitT> = ({ name, amount, goods, id }) => {
+export const Kit: React.FC<KitT> = ({ name, goods, id }) => {
   const dispatch = useDispatch();
   const onSetCount = (count: number) => {
     dispatch(getAmountKitCard({ id, amount: count }));
