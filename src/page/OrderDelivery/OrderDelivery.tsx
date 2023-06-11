@@ -63,7 +63,7 @@ const colorMapping = {
   'розовый': 'pink',
   'салатовый': 'lime green',
   'серебряный': 'silver',
-  'серый': 'gray',
+  'серый': 'grey',
   'синий': 'blue',
   'сиреневый': 'lavender',
   'солнечный': 'sunny',
