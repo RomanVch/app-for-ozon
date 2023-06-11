@@ -86,14 +86,11 @@ export const OrderDelivery = () => {
         if (row[0] === '' || row[0] === '№') {
           if (row[1] && dataTable[indexRow + 1] && dataTable[indexRow + 1][0] !== undefined && !Number.isNaN(+dataTable[indexRow + 1][0])) {
             headerTable = row;
-            console.log(row, 'row');
             return false;
           } else {
-            console.log(2);
             return false;
           }
         } else if (!isNaN(+row[0])) {
-          console.log(3);
           return true;
         }
       });
@@ -104,7 +101,6 @@ export const OrderDelivery = () => {
   };
   const onGetTable = ():{ amount: string; name: string }[] | null =>{
     function findColorInString(str:string) {
-      console.log(str);
       for (const pattern of colorsPattern) {
         if (pattern.test(str)) {
           console.log('dddd', str.match(pattern));
@@ -131,7 +127,6 @@ export const OrderDelivery = () => {
           const patternOpticDot = /[-+]\d{1,2}?([.,]\d{1,2})?/g;
           const optic =  row[1].match(patternOpticDot);
           const color = findColorInString(row[1]);
-          console.log(color, '1234');
           if (match && optic) {
             result = match[0] + ' (' + optic[0] + ') ' + (colorMapping[color as 'черный'] ? colorMapping[color as 'черный'] : '');
             break;
@@ -140,7 +135,6 @@ export const OrderDelivery = () => {
         return { name: result as string, amount: row[amountIndex] };
       });
     } else {
-      console.log('НЕ ФИЛЬТЕР');
       return dataTable.map((row) => {
         return { name: row[1] as string, amount: row[amountIndex] };
       });
@@ -155,10 +149,9 @@ export const OrderDelivery = () => {
       <h2>Фильтры:</h2>
       <div style={{ display: 'flex', justifyContent:'center' }}> <Checkbox value={glassesFilter} onChange={()=>{setGlassesFilter(prev=>!prev);}}/> <p> Очки </p> </div>
       <h2>Результат:</h2>
-      <button onClick={onGetTable}>расчет</button>
       {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+        // @ts-ignore
         arrayParse?.length ? <ExelDownload onClick={onGetTable} /> : 'Загрузи таблицу!'}
     </div>
   );
