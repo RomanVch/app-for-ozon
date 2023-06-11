@@ -10,18 +10,31 @@ type RowForExel = {
 type DataForTableT = RowForExel[];
 
 type GoodCardT = {
-  dataForTable:DataForTableT
+  dataForTable?:DataForTableT
+  onClick?:()=>DataForTableT | null,
 };
 
-export const ExelDownload: React.FC<GoodCardT> = ({ dataForTable }) => {
+export const ExelDownload: React.FC<GoodCardT> = ({ dataForTable, onClick }) => {
   const onDownloadExelClick = ()=>{
-    const parseTable = dataForTable.map((row)=>{
-      return {
-        ['артикул']:row.name,
-        ['количество']:row.amount,
-      };
-    });
-    const worksheet = utils.json_to_sheet(parseTable);
+    let parseTable;
+    if (onClick && !dataForTable) {
+      parseTable = onClick()?.map((row)=>{
+        return {
+          ['артикул']:row.name,
+          ['количество']:row.amount,
+        };
+      });
+    }  else if ( !onClick && dataForTable ) {
+      parseTable = dataForTable.map((row)=>{
+        return {
+          ['артикул']:row.name,
+          ['количество']:row.amount,
+        };
+      });
+    } else {
+      console.log('error');
+    }
+    const worksheet = utils.json_to_sheet(parseTable as any[]);
     const workbook = utils.book_new();
     utils.book_append_sheet(workbook, worksheet, 'Sheet1');
 

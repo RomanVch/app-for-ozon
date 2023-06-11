@@ -1,12 +1,14 @@
 import './style.css';
-import { Button, Paper, Typography } from '@mui/material';
-import { ChangeEventHandler, useState } from 'react';
+import { Button } from '@mui/material';
+import { useState } from 'react';
 
 type UploadFileT = {
-  onUpload: (file: File) => void;
+  onUpload: (file: File) => void
+  text: string,
+  type: string[]
 };
 
-export const UploadFile: React.FC<UploadFileT> = ({ onUpload }) => {
+export const UploadFile: React.FC<UploadFileT> = ({ onUpload, text, type }) => {
   const [isFilePicked, setIsFilePicked] = useState(false);
 
   const changeHandler = (event: any) => {
@@ -15,11 +17,11 @@ export const UploadFile: React.FC<UploadFileT> = ({ onUpload }) => {
     setIsFilePicked(true);
     onUpload(file);
   };
-
+  const typeString = type.join(', ');
   return (
     <Button variant="contained" component="label" color={isFilePicked ? 'success' : 'error'}>
-      Upload File
-      <input type="file" hidden accept=".png, .jpg, .jpeg" onChange={changeHandler} />
+      {text}
+      <input type="file" hidden accept={typeString} onChange={changeHandler} />
     </Button>
   );
 };

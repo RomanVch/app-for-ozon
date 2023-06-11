@@ -55,6 +55,16 @@ export const Home = () => {
             }
           />
         </Paper>
+        <Paper className={'home-paper'} elevation={3}>
+          <CustomLink
+            to="/app-for-ozon/order-for-delivery"
+            children={
+              <Typography variant="h6" component="h6">
+                заявка на поставку
+              </Typography>
+            }
+          />
+        </Paper>
       </div>
       {modalsQueue[0] === 'Auth' ? <Auth /> : null}
     </div>
