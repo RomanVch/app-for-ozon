@@ -11,10 +11,10 @@ export const store = configureStore({
   reducer: {
     calculateImg: calculateImgReducer,
     calculateKit: calculateKitReducer,
-    home: homeReducer
+    home: homeReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
-  devTools: true
+  devTools: true,
 });
 
 sagaMiddleware.run(rootSaga);

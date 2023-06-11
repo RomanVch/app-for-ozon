@@ -7,7 +7,7 @@ import {
   delBarcode,
   addImg,
   calculateImgData,
-  setCount
+  setCount,
 } from '../Redux/calculateImgReducer';
 
 import { useDispatch, useSelector } from 'react-redux';

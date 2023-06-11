@@ -5,8 +5,8 @@ const instance = axios.create({
   baseURL,
   headers: {
     'Client-Id': 311048,
-    'Api-Key': ''
-  }
+    'Api-Key': '',
+  },
 });
 
 export type StockType = {
@@ -57,12 +57,12 @@ export const ozonAPI = {
     },*/
   reportStocks(): any {
     return instance
-      .post<StockApiType>(`analytics/stock_on_warehouses`, {
-        limit: 1000000,
-        offset: 0
-      })
+      .post<StockApiType>('analytics/stock_on_warehouses', {
+      limit: 1000000,
+      offset: 0,
+    })
       .then((response) => {
         return response.data;
       });
-  }
+  },
 };

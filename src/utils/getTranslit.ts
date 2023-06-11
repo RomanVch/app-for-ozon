@@ -32,7 +32,7 @@ export const getTranslit = (word: string) => {
     ъ: '',
     э: 'e',
     ю: 'yu',
-    я: 'ya'
+    я: 'ya',
   };
 
   word = word.toLowerCase();

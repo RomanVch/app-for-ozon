@@ -1,10 +1,10 @@
 import './style.css';
-import { GoodT } from '../../Redux/calculateKitReducer';
-import { Typography, Card } from '@mui/material';
+import { GoodT, getAmountKitCard, delKit } from '../../Redux/calculateKitReducer';
+import { Typography, Card, Button } from '@mui/material';
 import { GoodCard } from '../../../../components/GoodCard';
 import { useDispatch } from 'react-redux';
 import { Counter } from '../../../../components/Counter';
-import { getAmountKitCard } from '../../Redux/calculateKitReducer';
+
 
 type KitT = {
   name: string;
@@ -18,17 +18,22 @@ export const Kit: React.FC<KitT> = ({ name, goods, id }) => {
   const onSetCount = (count: number) => {
     dispatch(getAmountKitCard({ id, amount: count }));
   };
+  const onDelKit = () => {
+    dispatch(getAmountKitCard({ id, amount: 0 }));
+    dispatch(delKit({ id }));
+  };
   return (
     <div className="kit-wrapper">
-      <Card>
+      <Card >
         <div className="kit-card-wrapper">
-          <Typography> {name}</Typography>
-          <Typography>
-            {' '}
+          <div className={'kit-card-header-wrapper'}>
+          <Typography fontWeight={'bold'} marginLeft={'62px'}> {name}</Typography>
+          <Button onClick={onDelKit}>X</Button>
+          </div>
+            <Typography>
             <Counter setCount={onSetCount} />
           </Typography>
           <div className={'kit-good'}>
-            {' '}
             {goods.map((item) => (
               <GoodCard name={item.name} id={item.id} onClick={() => {}} />
             ))}{' '}

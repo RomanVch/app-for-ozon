@@ -10,8 +10,8 @@ export type HomeReducerT = {
 
 const initialState: HomeReducerT = {
   behavior: {
-    modals: []
-  }
+    modals: [],
+  },
 };
 
 export const HomeReducer = createSlice({
@@ -23,8 +23,8 @@ export const HomeReducer = createSlice({
     },
     delModal: (state, action: PayloadAction<string>) => {
       state.behavior.modals = state.behavior.modals.filter((item) => item !== action.payload);
-    }
-  }
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function

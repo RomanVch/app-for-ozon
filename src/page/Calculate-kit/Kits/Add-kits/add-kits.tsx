@@ -1,16 +1,15 @@
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 
 import {
-  toggleCheckAddKit,
-  toggleCheckAddGoodKit,
   AddKitData,
   delGoodInKit,
+  getAddKit,
   getNameKit,
-  getAddKit
+  toggleCheckAddGoodKit,
+  toggleCheckAddKit,
 } from '../../Redux/calculateKitReducer';
 import { GoodCard } from '../../../../components/GoodCard';
 
@@ -46,8 +45,7 @@ export const AddKits = () => {
         }}
       />
       <div className="add-good">
-        <Button onClick={onAddGood} variant={checkAddGoodKit ? 'contained' : 'outlined'}>
-          {' '}
+        <Button onClick={onAddGood} variant={checkAddGoodKit ? 'contained' : 'outlined'} style={{ marginLeft:'10px' }}>
           add good{' '}
         </Button>
         <div className="add-kit-good">

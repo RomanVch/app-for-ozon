@@ -4,6 +4,6 @@
 }
 .goods .view-goods {
     display: flex;
-    margin: 30px;
+    margin: 20px;
     flex-wrap: wrap ;
 }

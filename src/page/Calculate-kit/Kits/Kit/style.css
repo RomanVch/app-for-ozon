@@ -4,10 +4,19 @@
 }
 .kit-wrapper{
     width: 300px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 .kit-card-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.kit-card-header-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

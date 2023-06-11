@@ -37,7 +37,7 @@ export const AddGoods = () => {
         }}
       />
       <Counter setCount={onCount} />
-      <div className={'del-goods-btn'}>
+      <div className={'del-goods-btn'} style={{ marginLeft:'10px' }}>
         <Button onClick={onDelKit} color="error" variant={checkDel ? 'contained' : 'outlined'}>
           Del
         </Button>

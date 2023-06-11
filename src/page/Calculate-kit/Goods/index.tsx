@@ -1,20 +1,16 @@
 import './style.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  calculateKitBehaviorData,
-  calculateKitGoodsData,
-  delGood
-} from '../Redux/calculateKitReducer';
+import { addGoodInKit, calculateKitBehaviorData, calculateKitGoodsData, delGood } from '../Redux/calculateKitReducer';
 import { GoodCard } from '../../../components/GoodCard';
 import { BasicCard } from '../../../components/SimpleCard';
-import { addGoodInKit } from '../Redux/calculateKitReducer';
+
 
 export const Goods: React.FC = () => {
   const goods = useSelector(calculateKitGoodsData);
   const { checkAddKit, checkDel } = useSelector(calculateKitBehaviorData);
   const dispatch = useDispatch();
-  const amountGoods = goods.reduce(function (accumulator, currentValue, index, array) {
+  const amountGoods = goods.reduce(function (accumulator, currentValue) {
     return accumulator + currentValue.amount;
   }, 0);
   const onClick = (id: string) => {
@@ -30,7 +26,7 @@ export const Goods: React.FC = () => {
       <div className="view-goods">
         {goods.length
           ? goods.map((item) => {
-              return (
+            return (
                 <GoodCard
                   key={item.id}
                   amount={item.amount}
@@ -38,8 +34,8 @@ export const Goods: React.FC = () => {
                   id={item.id}
                   onClick={onClick}
                 />
-              );
-            })
+            );
+          })
           : null}
       </div>
       <div>

@@ -22,7 +22,7 @@ export const Counter: React.FC<CounterT> = ({ setCount, value }) => {
               type="number"
               placeholder="0"
               InputLabelProps={{
-                shrink: true
+                shrink: true,
               }}
               onChange={onInput}
               value={value}
@@ -34,7 +34,7 @@ export const Counter: React.FC<CounterT> = ({ setCount, value }) => {
               type="number"
               placeholder="0"
               InputLabelProps={{
-                shrink: true
+                shrink: true,
               }}
               onChange={onInput}
             />

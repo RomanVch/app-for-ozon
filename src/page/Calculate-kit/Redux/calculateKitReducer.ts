@@ -32,12 +32,12 @@ const initialState: CalculateKitT = {
     name: '',
     id: '',
     goods: [],
-    amount: 0
+    amount: 0,
   },
   behavior: {
     checkAddKit: false,
-    checkDel: false
-  }
+    checkDel: false,
+  },
 };
 
 export const CalculateKit = createSlice({
@@ -112,7 +112,7 @@ export const CalculateKit = createSlice({
             name: '',
             id: '',
             goods: [],
-            amount: 0
+            amount: 0,
           };
         });
       }
@@ -147,8 +147,14 @@ export const CalculateKit = createSlice({
           return good;
         }
       });
-    }
-  }
+    },
+    delKit: (state, action: PayloadAction<{ id: string }>) => {
+      const index = state.kits.findIndex((element) => element.id === action.payload.id);
+      if (index !== -1) {
+        state.kits.splice(index, 1);
+      }
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function
@@ -162,7 +168,8 @@ export const {
   getNameKit,
   getAmountKit,
   getAddKit,
-  getAmountKitCard
+  getAmountKitCard,
+  delKit,
 } = CalculateKit.actions;
 export const calculateKitReducer = CalculateKit.reducer;
 

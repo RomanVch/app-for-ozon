@@ -14,10 +14,10 @@ const initialState: CalculateImgT = {
   imgs: [
     {
       img: null,
-      amount: 0
-    }
+      amount: 0,
+    },
   ],
-  arrayImg: []
+  arrayImg: [],
 };
 
 export const CalculateImg = createSlice({
@@ -27,7 +27,7 @@ export const CalculateImg = createSlice({
     addBarcode: (state) => {
       state.imgs.push({
         img: null,
-        amount: 0
+        amount: 0,
       });
     },
     delBarcode: (state) => {
@@ -54,8 +54,8 @@ export const CalculateImg = createSlice({
       }, []);
       console.log(draftArray);
       state.arrayImg = draftArray;
-    }
-  }
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function
