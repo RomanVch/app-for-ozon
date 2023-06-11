@@ -108,6 +108,7 @@ export const OrderDelivery = () => {
       for (const pattern of colorsPattern) {
         if (pattern.test(str)) {
           console.log('dddd', str.match(pattern));
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           return str.toLowerCase().match(pattern)[0];
         }
@@ -156,7 +157,8 @@ export const OrderDelivery = () => {
       <h2>Результат:</h2>
       <button onClick={onGetTable}>расчет</button>
       {
-        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
         arrayParse?.length ? <ExelDownload onClick={onGetTable} /> : 'Загрузи таблицу!'}
     </div>
   );
