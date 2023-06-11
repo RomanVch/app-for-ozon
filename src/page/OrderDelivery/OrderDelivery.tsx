@@ -8,8 +8,8 @@ import { ExelDownload } from '../../components/ExelDownload';
 const patternsArticul = [
   /[A-Z]{2}\d{4}/,
   /[A-Z]{2}\d{3}/,
-  /[A-Z]\d{3}/,
   /[A-Z]\d{4}/,
+  /[A-Z]\d{3}/,
   /[A-Z]{2}\d{4}/,
   /\d{4}-[A-Z]\d/,
   /\d{4}\s*-\s*[A-Z]\d{2}/,
@@ -67,7 +67,7 @@ const colorMapping = {
   'синий': 'blue',
   'сиреневый': 'lavender',
   'солнечный': 'sunny',
-  'фиолетовый': 'purple',
+  'фиолетовый': 'violet',
   'хаки': 'khaki',
   'холодный': 'cool',
   'черный': 'black',
