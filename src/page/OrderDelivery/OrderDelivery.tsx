@@ -128,7 +128,7 @@ export const OrderDelivery = () => {
           const optic =  row[1].match(patternOpticDot);
           const color = findColorInString(row[1]);
           if (match && optic) {
-            result = match[0] + ' (' + optic[0] + ') ' + (colorMapping[color as 'черный'] ? colorMapping[color as 'черный'] : '');
+            result = match[0] + ' (' + optic[0].replace(',', '.') + ')' + (colorMapping[color as 'черный'] ? colorMapping[color as 'черный'] : '');
             break;
           }
         }
