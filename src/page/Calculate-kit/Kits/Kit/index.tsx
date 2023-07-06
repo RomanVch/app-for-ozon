@@ -32,7 +32,6 @@ export const Kit: React.FC<KitT> = ({ name, goods, id }) => {
     dispatch(changeNameKit({ id, name:newNameKit }));
     onEditName();
   };
-  const onCleanState = ()=>{};
   return (
     <div className="kit-wrapper">
       <Card >
