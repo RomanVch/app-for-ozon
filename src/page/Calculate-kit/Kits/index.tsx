@@ -1,13 +1,17 @@
 import './style.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AddKits } from './Add-kits/add-kits';
-import { calculateKitGoodsData, KitsData } from '../Redux/calculateKitReducer';
+import { calculateKitGoodsData, cleanKits, KitsData } from '../Redux/calculateKitReducer';
 import { Kit } from './Kit';
+import { Button } from '@mui/material';
 
 export const Kits: React.FC = () => {
+  const dispatch = useDispatch();
   const goods = useSelector(calculateKitGoodsData);
   const kits = useSelector(KitsData);
-
+  const onClickCleanState = ()=>{
+    dispatch(cleanKits());
+  };
   return (
     <>
       {goods.length > 1 ? (
@@ -20,6 +24,7 @@ export const Kits: React.FC = () => {
           </div>
         </div>
       ) : null}
+      <Button color={'error'} onClick={onClickCleanState}>отчисть</Button>
     </>
   );
 };

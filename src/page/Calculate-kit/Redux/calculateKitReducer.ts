@@ -44,6 +44,9 @@ export const CalculateKit = createSlice({
   name: 'CalculateKit',
   initialState,
   reducers: {
+    cleanKits: (state) => {
+      Object.assign(state, initialState);
+    },
     addGoods: (state, action: PayloadAction<{ name: string; amount: number; id: string }>) => {
       const checkGoodsName = state.goods.find((item) => item.name === action.payload.name);
       if (!checkGoodsName) {
@@ -117,6 +120,12 @@ export const CalculateKit = createSlice({
         });
       }
     },
+    changeNameKit: (state, action: PayloadAction<{ name:string; id: string }>) => {
+      const index = state.kits.findIndex((kit) => kit.id === action.payload.id);
+      if (index !== -1) {
+        state.kits[index].name = action.payload.name;
+      }
+    },
     getAmountKitCard: (state, action: PayloadAction<{ amount: number; id: string }>) => {
       let difference = 0;
       state.kits = state.kits.map((item) => {
@@ -170,6 +179,8 @@ export const {
   getAddKit,
   getAmountKitCard,
   delKit,
+  changeNameKit,
+  cleanKits,
 } = CalculateKit.actions;
 export const calculateKitReducer = CalculateKit.reducer;
 
