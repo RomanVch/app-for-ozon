@@ -12,14 +12,23 @@ import {
   toggleCheckAddKit,
 } from '../../Redux/calculateKitReducer';
 import { GoodCard } from '../../../../components/GoodCard';
+import { useState } from 'react';
 
 export const AddKits = () => {
   const checkAddGoodKit = useSelector(toggleCheckAddGoodKit);
   const addKit = useSelector(AddKitData);
   const dispatch = useDispatch();
+  const [localName, setLocalName] = useState('');
+  const [error, setError] = useState(false);
 
   const onChange = (name: string) => {
     dispatch(getNameKit(name));
+    setLocalName(name);
+    if (localName.length > 2) {
+      setError(false);
+    } else {
+      setError(true);
+    }
   };
 
   const onDelGoods = (id: string) => {
@@ -31,7 +40,12 @@ export const AddKits = () => {
   };
 
   const onAddKit = () => {
-    dispatch(getAddKit());
+    if (localName.length > 2) {
+      setError(false);
+      dispatch(getAddKit());
+    } else {
+      setError(true);
+    }
   };
 
   return (
@@ -43,6 +57,7 @@ export const AddKits = () => {
         onChange={(e) => {
           onChange(e.target.value);
         }}
+        error={error}
       />
       <div className="add-good">
         <Button onClick={onAddGood} variant={checkAddGoodKit ? 'contained' : 'outlined'} style={{ marginLeft:'10px' }}>

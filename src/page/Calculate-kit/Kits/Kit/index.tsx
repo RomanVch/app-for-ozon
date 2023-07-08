@@ -18,6 +18,7 @@ export const Kit: React.FC<KitT> = ({ name, goods, id }) => {
   const dispatch = useDispatch();
   const [editName, setEditName] = useState<boolean>(false);
   const [newNameKit, setNewNameKit] = useState<string>(name);
+  const [error, setError] = useState<boolean>(false);
   const onSetCount = (count: number) => {
     dispatch(getAmountKitCard({ id, amount: count }));
   };
@@ -27,10 +28,15 @@ export const Kit: React.FC<KitT> = ({ name, goods, id }) => {
   };
   const onEditName = () =>{
     setEditName(prev => !prev);
+    setError(false);
   };
   const onChangeName = ()=>{
-    dispatch(changeNameKit({ id, name:newNameKit }));
-    onEditName();
+    if (newNameKit.length > 2) {
+      dispatch(changeNameKit({ id, name: newNameKit }));
+      onEditName();
+    } else {
+      setError(true);
+    }
   };
   return (
     <div className="kit-wrapper">
@@ -39,7 +45,7 @@ export const Kit: React.FC<KitT> = ({ name, goods, id }) => {
           <div className={'kit-card-header-wrapper'}>
             { editName ?
               <div style={{ display:'flex', marginLeft:10 }}>
-              <Input value={newNameKit} onChange={(evt)=>{setNewNameKit(evt.target.value);}}/>
+              <Input error={error} value={newNameKit} onChange={(evt)=>{setNewNameKit(evt.target.value);}}/>
               <Button onClick={onChangeName}>ok</Button>
               </div> :
               <Typography fontWeight={'bold'} marginLeft={'62px'} onDoubleClick={onEditName}> {newNameKit} </Typography>
